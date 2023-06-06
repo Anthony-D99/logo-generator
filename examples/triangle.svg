@@ -4,6 +4,6 @@
  <polygon points="105,20 20,200 200,199 "
        fill="green" />
 
-      <text x="110" y="175" font-size="60" text-anchor="middle" fill="white">SVG</text>
+      <text x="110" y="190" font-size="60" text-anchor="middle" fill="white">SVG</text>
 
   </svg>
