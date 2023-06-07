@@ -3,6 +3,7 @@ const fs = require('fs')
 const shapes = require('./lib/shapes')
 let svg
 
+
 inquirer.prompt([
    {
       type: 'input',
@@ -18,7 +19,7 @@ inquirer.prompt([
     type: 'list',
     name: 'shape',
     message: 'Select which shape you would like for your logo.',
-    choices: ['Circle',' Square', 'Triangle'],
+    choices: ['Circle','Square', 'Triangle'],
 
    },
    {
@@ -29,25 +30,14 @@ inquirer.prompt([
    
   
 ]).then(result => {
-   if (result.shape === 'Square') {
-      svg = shapes.circle
-   } else if (result.shape === 'Circle') {
-      svg = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+   const format = new shapes(result.text, result.text_color, result.shape, result.shape_color)
 
-      <circle cx="150" cy="100" r="80" fill="${result.shape_color}" />
-    
-      <text x="150" y="125" font-size="60" text-anchor="middle" fill="${result.text_color}">${result.text}</text>
-    
-    </svg>`
+   if (result.shape === 'Circle') {
+      svg = format.circle()
+   } else if (result.shape === 'Square') {
+      svg = format.square()
    } else {
-      svg = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-
-      <polygon points="105,20 20,200 200,199 "
-            fill="${result.shape_color}" />
-     
-           <text x="110" y="190" font-size="60" text-anchor="middle" fill="${result.text_color}">${result.text}</text>
-     
-       </svg>`
+      svg = format.triangle()
    }
 
    
