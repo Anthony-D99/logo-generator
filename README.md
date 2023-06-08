@@ -15,4 +15,6 @@ To install this project you must clone the repository then open the  main 'logo-
 
 This application can be used by anyone and everyone to create a simple yet effective logo. In order to do so the user must first open the 'logo-generator' file in the terminal and run 'node index.js'. The user will then be presented with four questions that will help complete the criteria needed to create their desired logo. After answering each question to the users best ability the logo.svg file will be automatically generated and ready to use.
 
+## GitHub Link
 
+https://github.com/Anthony-D99/logo-generator
